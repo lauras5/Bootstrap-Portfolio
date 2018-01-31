@@ -43,7 +43,7 @@ h2 {
     margin: 15px 20px 10px 10px;
     height: 215px;
     float: left;
-    border: 15px solid #18545f7c;
+    border: 15px solid #435a5e7c;
 }
 
 .portfolioImages {
@@ -51,13 +51,6 @@ h2 {
     width: 250px;
     padding: 10px;
     margin-left: 0px;
-}
-
-.portfolioImages:hover {
-    opacity: .8;
-    position: relative;
-    top: -10px;
-
 }
 
 figure {
@@ -92,6 +85,33 @@ figcaption {
     background-position: -366px -158px;
     padding:10px;
 }
+
+.portfolioImages:hover, .social-github2-dreamstale35:hover, .social-linkedin-dreamstale45:hover, .social-overflow-dreamstale53:hover {
+    opacity: .8;
+    animation: shake .5s cubic-bezier(.36,.07,.19,.97) both;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+  }
+  
+  @keyframes shake {
+    10%, 90% {
+      transform: translate3d(-1px, 0, 0);
+    }
+   
+    20%, 80% {
+      transform: translate3d(2px, 0, 0);
+    }
+  
+    30%, 50%, 70% {
+      transform: translate3d(-4px, 0, 0);
+    }
+  
+    40%, 60% {
+      transform: translate3d(4px, 0, 0);
+    }
+  }
+
 
 .social-linkedin-dreamstale45 {
     width: 100px;
