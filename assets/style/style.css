@@ -1,0 +1,119 @@
+body {
+    background-image: url(https://cdn.pixabay.com/photo/2017/12/10/10/09/moss-3009549_960_720.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    top: 0;
+    left: 0;
+    margin: auto;
+    text-align: center;
+    font-family: 'Oxygen', sans-serif;
+}
+
+#header {
+    background-color: white;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-bottom: 2%;
+    border-top: 30px solid rgba(255, 255, 255, 0.500);
+    border-bottom: 30px solid rgba(255, 255, 255, 0.500);
+    background-clip: padding-box;
+    clear: both;
+}
+
+h1 {
+    font-family: 'Unica One', cursive;
+    color: black;
+    padding: 5px;
+    font-size: 55px;
+}
+
+h2 {
+    padding: 10px;
+    text-align: center;
+    font-family: 'Unica One', cursive;
+}
+
+.navbar-nav {
+    font-family: 'Unica One', cursive;
+    font-size: 22px;
+}
+
+#profilePic {
+    margin: 15px 20px 10px 10px;
+    height: 215px;
+    float: left;
+    border: 15px solid #18545f7c;
+}
+
+.portfolioImages {
+    height: 170px;
+    width: 250px;
+    padding: 10px;
+    margin-left: 0px;
+}
+
+.portfolioImages:hover {
+    opacity: .8;
+    position: relative;
+    top: -10px;
+
+}
+
+figure {
+    padding: 0;
+}
+
+figcaption {
+    position: relative;
+    top: -70px;
+    left: 0;
+    background-color: rgba(253, 252, 252, 0.781);
+    text-align: center;
+    padding: 5px;
+}
+
+#mainContent {
+    background-color: white;
+    text-align: justify;
+    padding: 15px;
+}
+
+#socialIcons {
+    background-color: rgba(255, 255, 255, 0.752);
+    border: 5px solid white;
+    height: 415px;
+    margin-left: 1%;
+}
+
+.social-github2-dreamstale35 {
+    width: 100px;
+    height: 100px;
+    background-position: -366px -158px;
+    padding:10px;
+}
+
+.social-linkedin-dreamstale45 {
+    width: 100px;
+    height: 100px;
+    background-position: -418px -210px;
+    padding: 10px;
+}
+
+.social-overflow-dreamstale53 {
+    width: 100px;
+    height: 100px;
+    background-position: -366px -262px;
+    padding: 10px;
+}
+
+.footer {
+    background-color: white;
+    border-top: 10px solid rgba(255, 255, 255, 0.500);
+    border-bottom: 10px solid rgba(255, 255, 255, 0.500);
+    background-clip: padding-box;
+    width: 100%;
+    margin-top: 2%;
+    line-height: 1.5;
+    padding: 10px;
+}
