@@ -1,5 +1,6 @@
 body {
-    background-image: url("../images/mountain.jpeg");
+    /* background-image: url("../images/mountain.jpeg"); */
+    background-color: white;
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
@@ -10,47 +11,73 @@ body {
     font-family: 'Oxygen', sans-serif;
 }
 
-#header {
-    background-color: white;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    margin-bottom: 2%;
-    border-top: 30px solid rgba(255, 255, 255, 0.500);
-    border-bottom: 30px solid rgba(255, 255, 255, 0.500);
-    background-clip: padding-box;
-    clear: both;
+#navbar {
+    height: 35px;
+    font-size: 22px;
+}
+
+#navName, #navList{
+    padding: 0;
+    margin: 0;
+    color: #313131;
+}
+
+#navContent {
+    float: right;
+}
+
+.jumbotron {
+    background-image: url('../images/headerbg2.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    text-align: center;
+    border-radius: 0;
+    width: 100%;
 }
 
 h1 {
     font-family: 'Unica One', cursive;
-    color: black;
     padding: 5px;
-    font-size: 55px;
+    font-size: 100px;
 }
 
 h2 {
-    padding: 10px;
+    padding: 15px;
     text-align: center;
     font-family: 'Unica One', cursive;
-}
-
-.navbar-nav {
-    font-family: 'Unica One', cursive;
-    font-size: 22px;
+    background-color: #4d5c6f;
+    color: white;
 }
 
 #profilePic {
-    margin: 15px 20px 10px 10px;
-    height: 215px;
-    float: left;
-    border: 15px solid #435a5e7c;
+    height: 200px;
+    border-radius: 1000px;
+    position: relative;
+    top: -10px;
+    z-index: 1;
+    border: 3px solid rgb(248, 246, 246);
 }
 
 .portfolioImages {
     height: 170px;
     width: 250px;
-    padding: 10px;
-    margin-left: 0px;
+}
+
+#languages, #hobbies{
+    list-style-type: none;
+    text-align: left;
+    padding: 20px;
+}
+
+#submitBTN {
+    display: block;
+    margin: auto;
+    color: white;
+    background-color: #60708a;
+    border: 2px solid #4d5c6f;
+    padding: 2px;
+    width: 149px;
 }
 
 figure {
@@ -60,39 +87,41 @@ figure {
 
 figcaption {
     position: relative;
-    top: -70px;
-    left: 0;
-    background-color: rgba(253, 252, 252, 0.781);
+    top: -42px;
+    left: 34px;
+    background-color: rgba(77, 92, 111, 0.87);
     text-align: center;
-    padding: 5px;
+    padding: 23px;
     font-family: 'Unica One', cursive;
-
+    color: white;
 }
 
 #mainContent {
-    background-color: rgba(255, 255, 255, 0.664);
     text-align: justify;
     padding: 15px;
+    line-height: 175%;
 }
 
-#socialIcons {
-    background-color: rgba(255, 255, 255, 0.752);
-    border: 5px solid white;
-    height: 100%;
-    margin-left: 1%;
+#mainContentPortfolio {
+    margin-left: 3%;
+}
+
+#portRow {
+    margin-bottom: 5%;
+    margin-top: 3%;
 }
 
 .social-github2-dreamstale35 {
-    width: 80px;
-    height: 80px;
+    width: 40px;
+    height: 40px;
     background-position: -366px -158px;
     padding:5px;
     margin-bottom: 10px;
 }
 
 .social-linkedin-dreamstale45 {
-    width: 80px;
-    height: 80px;
+    width: 40px;
+    height: 40px;
     background-position: -418px -210px;
     padding: 5px;
     margin-bottom: 10px;
@@ -100,12 +129,22 @@ figcaption {
 }
 
 .social-overflow-dreamstale53 {
-    width: 80px;
-    height: 80px;
+    width: 40px;
+    height: 40px;
     background-position: -366px -262px;
     padding: 5px;
     margin-bottom: 10px;
 
+}
+
+form {
+    width: 70%;
+    display: block;
+    margin: auto;
+}
+
+.footer {
+    width: 100%;
 }
 
 .portfolioImages:hover, .social-github2-dreamstale35:hover, .social-linkedin-dreamstale45:hover, .social-overflow-dreamstale53:hover {
@@ -135,14 +174,3 @@ figcaption {
   }
 
 
-
-.footer {
-    background-color: white;
-    border-top: 10px solid rgba(255, 255, 255, 0.500);
-    border-bottom: 10px solid rgba(255, 255, 255, 0.500);
-    background-clip: padding-box;
-    width: 100%;
-    margin-top: 2%;
-    line-height: 1.5;
-    padding: 10px;
-}

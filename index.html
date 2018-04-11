@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <!-- bootstrap stylesheet -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
     <!-- my css stylesheet -->
     <link rel="stylesheet" href="assets/style/style.css">
     <!-- google fonts -->
@@ -10,73 +12,111 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Bootstrap Portfolio</title>
+    <title>Laura Salcido
+    </title>
 </head>
+
 <body>
 
-<div class="container-fluid">
-    <div class="row" id="header">
-        <div class="col-sm-2"></div>
-        <div class="col-sm-8">
-            <!-- navbar -->
-            <nav class="navbar navbar-expand-lg navbar-light">
-                <div class="navbar-brand"><h1>LAURA SALCIDO</h1></div>
-                <hr>
-                <ul class="navbar-nav">
-                    <li class="nav-item active">
-                        <a href="index.html" class="nav-link">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="portfolio.html" class="nav-link">Portfolio</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="content.html" class="nav-link">Contact</a>
-                    </li>
-                </ul>
-            </nav>
-        </div>
-    </div>
+    <div class="container-fluid">
+        <div class="row" id="topMenu">
 
-    <div class="row">
-        <div class="col-sm-2"></div>
-        <!-- main content -->
-        <div class="col-sm-5" id="mainContent">
-            <h2>About Me</h2>
-            <hr>
-            <img class="img-responsive img-circle" id="profilePic" src="assets/images/profile-pic.png" alt="profile image">
-            <p>&emsp; I’m a full stack developer with a background in art and interior design. I’ve found that my unique background has given me an advantage when it comes to working in front end design and UI development, because both require problem solving skills, trend forecasting and attention to detail.</p>
-            <p>&emsp; I am really passionate about both front-end and back-end development, but I have to say that my true strengths lie in back-end development and server side applications. I love to learn and I am also taking classes to learn more about cyber security.I’m making a full transition to web design at the moment, and I would really appreciate any advice or opportunities you have to share. </p>
-        </div>
-
-        <!-- social media icons -->
-        <div class="col-sm-3" id="socialIcons">
-                <h2>Social Media</h2>
-                <hr>
-            <div class="row">
-                <div class="col-sm-4">
-                    <a href="https://www.linkedin.com/in/idlaurasalcido/" target="_blank"><img src="assets/images/linkedin-dreamstale45.png" alt="linkedin" class="social-linkedin-dreamstale45"></a>
-                </div>
-                <div class="col-sm-4">
-                    <a href="https://github.com/lauras5" target="_blank"><img src="assets/images/github2-dreamstale35.png" alt="github" class="social-github2-dreamstale35"></a>
-                </div>
-                <div class="col-sm-4">
-                    <a href=" https://stackoverflow.com/users/9036358/lauras5" target="_blank"><img src="assets/images/overflow-dreamstale53.png" alt="linkedin" class="social-overflow-dreamstale53"></a>
-                </div>
+            <div class="col-md">
+                <!-- navbar -->
+                <nav class="navbar navbar-expand-lg navbar-light">
+                    <div class="navbar-brand">
+                        <p id='navName'>
+                            <h4>LAURA SALCIDO</h4>
+                        </p>
+                    </div>
+                </nav>
             </div>
-            <!-- social media icons -->
+            <div class="col-md">
+                <nav id='navContent' class='navbar navbar-expand-lg navbar-light'>
+                    <ul class="navbar-nav" id='navList'>
+                        <li class="nav-item active">
+                            <a href="index.html" class="nav-link">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="portfolio.html" class="nav-link">Portfolio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="content.html" class="nav-link">Contact</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
         </div>
-        <!-- end social media icons -->
 
-        <div class="col-sm-2"></div>
     </div>
 
     <div class="row">
-    <div class="footer">
-        &copy; Copyright Laura Salcido 2018
-    </div>
+        <div class="col-md-12">
+            <div class="jumbotron">
+                <h1>LAURA SALCIDO</h1>
+                <img class="img-responsive img-circle" id="profilePic" src="assets/images/profile-pic.png" alt="profile image">
+                <h3>Full-Stack Web Developer</h3>
+
+            </div>
+        </div>
     </div>
 
+    <div class="row">
+        <div class="col-md-1"></div>
+        <!-- main content -->
+        <div class="col-md-5">
+            <h2>About Me</h2>
+            <div id="mainContent">
+                <p>&emsp; I’m a full stack developer with a background in art and interior design. I’ve found that my unique
+                    background has given me an advantage when it comes to working in front end design and UI development,
+                    because both require problem solving skills, trend forecasting and attention to detail.</p>
+                <p>&emsp; I am really passionate about both front-end and back-end development, and I want to keep learning.
+                    I love to learn and I am also taking classes to learn more about cyber security.I’m making a full transition
+                    to web design at the moment, and I would really appreciate any advice or opportunities you have to share.</p>
+            </div>
+        </div>
+        <div class="col-md-5">
+            <h2 id='langTitle'>Languages</h2>
+            <div id="languages">
+                <ul>
+                    <li>HTML & CSS</li>
+                    <li>JavaScript</li>
+                    <li>Node.js</li>
+                    <li>Express.js</li>
+                    <li>SQL</li>
+                </ul>
+            </div>
+            <h2 id='hobTitle'>Hobbies</h2>
+            <div id="hobbies">
+                <ul>
+                    <li>Coding</li>
+                    <li>Sudoku & KenKen</li>
+                    <li>Painting</li>
+                    <li>Astronomy</li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-1"></div>
+    </div>
+    <div class="row">
+        <div class="footer">
+            &copy; Copyright Laura Salcido 2018
+
+            <a href="https://www.linkedin.com/in/idlaurasalcido/" target="_blank">
+                <img src="assets/images/linkedin-dreamstale45.png" alt="linkedin" class="social-linkedin-dreamstale45">
+            </a>
+
+            <a href="https://github.com/lauras5" target="_blank">
+                <img src="assets/images/github2-dreamstale35.png" alt="github" class="social-github2-dreamstale35">
+            </a>
+
+            <a href=" https://stackoverflow.com/users/9036358/lauras5" target="_blank">
+                <img src="assets/images/overflow-dreamstale53.png" alt="linkedin" class="social-overflow-dreamstale53">
+            </a>
+        </div>
+    </div>
 </div>
 
 </body>
+
 </html>
