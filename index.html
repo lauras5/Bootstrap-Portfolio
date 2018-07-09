@@ -12,117 +12,276 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Laura Salcido
-    </title>
+    <title>Laura Salcido</title>
 </head>
 
 <body>
 
+    <nav id="navbar-example2" class="navbar navbar-light bg-light">
+        <a class="navbar-brand" href="">Laura Salcido</a>
+        <ul class="nav nav-pills">
+            <li class="nav-item">
+                <a class="nav-link" href="#about">About Me</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#portfolio">Portfolio</a>
+            </li>
+            <li class='nav-item'>
+                <a class='nav-link' href="http://elzeeandtheweb.com/" target='_blank'>Blog</a>
+            </li>
+        </ul>
+    </nav>
+
     <div class="container-fluid">
-        <div class="row" id="topMenu">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="jumbotron">
+                    <div id='title'>
+                        <h1>LAURA SALCIDO</h1>
+                        <img class="img-responsive img-circle" id="profilePic" src="assets/images/profilepic.jpg" alt="profile image">
+                        <h3>Full-Stack Web Developer</h3>
+                        <p>Contact : </p>
+                        <a href="https://www.linkedin.com/in/idlaurasalcido/" target="_blank">
+                            <img src="assets/images/linkedin-dreamstale45.png" alt="linkedin" class="social-linkedin-dreamstale45">
+                        </a>
 
-            <div class="col-md">
-                <!-- navbar -->
-                <nav class="navbar navbar-expand-lg navbar-light">
-                    <img class="img-responsive img-circle" id="profilePic" src="assets/images/pro.jpg" alt="profile image">
-                    <div class="navbar-brand">
-                        <p id='navName'>
-                            <h4>LAURA SALCIDO</h4>
-                        </p>
+                        <a href="https://github.com/lauras5" target="_blank">
+                            <img src="assets/images/github2-dreamstale35.png" alt="github" class="social-github2-dreamstale35">
+                        </a>
+
+                        <a href=" https://stackoverflow.com/users/9036358/lauras5" target="_blank">
+                            <img src="assets/images/overflow-dreamstale53.png" alt="linkedin" class="social-overflow-dreamstale53">
+                        </a>
+
+                        <a href="https://www.instagram.com/elzeeandtheweb/" target="_blank">
+                            <img src="./assets/images/instagram-dreamstale43.png" alt="linkedin" class="social-overflow-dreamstale53">
+                        </a>
+                        <p>ELZEEANDTHEWEB@GMAIL.COM</p>
                     </div>
-                </nav>
+                </div>
             </div>
-            <div class="col-md">
-                <nav id='navContent' class='navbar navbar-expand-lg navbar-light'>
-                    <ul class="navbar-nav" id='navList'>
-                        <li class="nav-item active">
-                            <a href="index.html" class="nav-link">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="portfolio.html" class="nav-link">Portfolio</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="content.html" class="nav-link">Contact</a>
-                        </li>
-                    </ul>
-                </nav>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div data-spy="scroll" data-target="#navbar-example2" data-offset="0">
+                    <h2 id="about">About Me</h2>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div id="mainContent">
+                                <p>
+                                    I am a full stack developer with focus on MERN stack applications. I have a background in art and architectural/interior
+                                    design. I've always had an eye for design, and I am a natural problem solver. My hobbies
+                                    include reading, playing KenKen and spending time with my family! :D
+                                </p>
+                                <p>
+                                    I've always been interested in web development, so I signed up for Coding Boot-camp at UCI and I loved it. Thanks to my hard
+                                    work and determination, I recently got a job as a TA for the next Boot-Camp Cohort. I'm
+                                    currently looking for full-time work as a full-stack developer.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <h4 id='langTitle'>Languages</h4>
+                            <div id="languages">
+                                <div class="row">
+
+                                    <div class="col-md-6">
+                                        <ul>
+                                            <li>HTML & CSS</li>
+                                            <li>JavaScript</li>
+                                            <li>Node.js</li>
+                                            <li>Express.js</li>
+                                            <li>MongoDB</li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <ul>
+                                            <li>Mongoose</li>
+                                            <li>MySQL</li>
+                                            <li>React</li>
+                                            <li>.NET</li>
+                                            <li>C#</li>
+                                        </ul>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-12">
+                <div data-spy="scroll" data-target="#navbar-example2" data-offset="0">
+
+                    <h2 id="portfolio">Portfolio</h2>
+                    <div class="col-md" id="mainContentPortfolio">
+                        <div id="portfolio">
+                            <div class="row" id='PRows'>
+
+                                <div class="col-md">
+                                    <figure>
+                                        <a href="https://totsapp.herokuapp.com/" target='_blank'>
+                                            <img src="./assets/images/tots.jpg" alt="toddler app" class="portfolioImages">
+                                        </a>
+                                        <figcaption>
+                                            <span class='gameNames'>Toddler Learning App</span>
+                                        </figcaption>
+                                        <p class='figInfo'>
+                                            This is a MERN stack app that is design for toddlers ages 2-4. It is meant to prepare them for preschool and teach them numbers,
+                                            colors, shapes and abc's. There are games that take in the childs scores and
+                                            the data is sent to the parents page, where the parents can see the childs development
+                                            as well as where they need help.
+                                        </p>
+                                    </figure>
+                                </div>
+                                <div class="col-md">
+                                    <figure>
+                                        <a href="https://lauras5.github.io/CoCodeApp/" target='_blank'>
+                                            <img src="assets/images/cocode.JPG" alt="cocode app" class="portfolioImages">
+                                        </a>
+                                        <figcaption>
+                                            <span class='gameNames'>Co-Code App</span>
+                                        </figcaption>
+                                        <p class='figInfo'>
+                                            This app is for the Remote Developer or CS students. It requires a GitHub login and allows user to search their current location
+                                            for places that offer free WIFI. It also suggests places that have laptop connections
+                                            and food, since you'll probably be there for a while.
+                                        </p>
+                                    </figure>
+                                </div>
+                                <div class="col-md">
+                                    <figure>
+                                        <a href="https://arcane-spire-96905.herokuapp.com/" target='_blank'>
+                                            <img src="assets/images/uni.JPG" alt="UNI Chat" class="portfolioImages">
+                                        </a>
+                                        <figcaption>
+                                            <span class='gameNames'>UNI Chat</span>
+                                        </figcaption>
+                                        <p class='figInfo'>
+                                            UNI Chat is a web app that allows students to communicate anonymously with other students. RAs are also able to clearly communicate
+                                            with all students in their dorms via a message board on their profiles, and Admins
+                                            also have a message board. Create a profile with the Auth Code >>>
+                                            <strong>al748o9bg5l97473mkckh6ng</strong>
+                                        </p>
+                                    </figure>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-md">
+                                    <figure>
+                                        <a href="https://pure-atoll-91754.herokuapp.com/" target='_blank'>
+                                            <img src="./assets/images/clicky.jpg" alt="clicky game" class="portfolioImages">
+                                        </a>
+                                        <figcaption>
+                                            <span class='gameNames'>Clicky Game</span>
+                                        </figcaption>
+                                    </figure>
+                                </div>
+                                <div class="col-md">
+                                    <figure>
+                                        <a href="https://lauras5.github.io/Get-a-Gif/" target='_blank'>
+                                            <img src="./assets/images/gifapp.jpg" alt="gif app" class="portfolioImages">
+                                        </a>
+                                        <figcaption>
+                                            <span class='gameNames'>Get-a-Gif</span>
+                                        </figcaption>
+                                    </figure>
+                                </div>
+                                <div class="col-md">
+                                    <figure>
+                                        <a href="https://lauras5.github.io/Gem-Game/" target='_blank'>
+                                            <img src="assets/images/gemgame.jpg" alt="gem game" class="portfolioImages">
+                                        </a>
+                                        <figcaption>
+                                            <span class='gameNames'>Gem Game</span>
+                                        </figcaption>
+                                    </figure>
+                                </div>
+                                <div class="col-md">
+                                    <figure>
+                                        <a href="https://lauras5.github.io/week-4-game/" target='_blank'>
+                                            <img src="assets/images/rpggame.JPG" alt="rpg game" class="portfolioImages">
+                                        </a>
+                                        <figcaption>RPG Game</figcaption>
+                                    </figure>
+                                </div>
+                                <div class="col-md">
+                                    <figure>
+                                        <a href="https://lauras5.github.io/TriviaGame/" target='_blank'>
+                                            <img src="assets/images/trivia.JPG" alt="trivia" class="portfolioImages">
+                                        </a>
+                                        <figcaption>Trivia Game</figcaption>
+                                    </figure>
+                                </div>
+                                <div class="col-md">
+                                    <figure>
+                                        <a href="https://lauras5.github.io/Firebase-Train/" target='_blank'>
+                                            <img src="assets/images/firebasetrains.JPG" alt="train app" class="portfolioImages">
+                                        </a>
+                                        <figcaption>Train Tracker</figcaption>
+                                    </figure>
+                                </div>
+                                <div class="col-md">
+                                    <figure>
+                                        <a href="https://lauras5.github.io/Hangman-Game/" target='_blank'>
+                                            <img src="assets/images/hangman.jpg" alt="hangman game" class="portfolioImages">
+                                        </a>
+                                        <figcaption>90's Hangman Game</figcaption>
+                                    </figure>
+                                </div>
+
+                                <div class="col-md">
+                                    <figure>
+                                        <a href="https://lauras5.github.io/Psychic-Game/" target='_blank'>
+                                            <img src="assets/images/psychic.JPG" alt="psychic game" class="portfolioImages">
+                                        </a>
+                                        <figcaption>Psychic Game</figcaption>
+                                    </figure>
+                                </div>
+                                <div class="col-md">
+                                    <figure>
+                                        <a href="https://obscure-plains-99326.herokuapp.com/" target='_blank'>
+                                            <img src="assets/images/burger.JPG" alt="burgerGame" class="portfolioImages">
+                                        </a>
+                                        <figcaption>Yum Yum Burgers</figcaption>
+                                    </figure>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
 
-    </div>
+        <div class="row">
+            <div class="footer">
+                &copy; Copyright Laura Salcido 2018
 
-    <div class="row">
-        <div class="col-md-12">
-            <div class="jumbotron">
-                <h1>LAURA SALCIDO</h1>
-                <!-- <img class="img-responsive img-circle" id="profilePic" src="assets/images/pro.jpg" alt="profile image">
-                <h3>Full-Stack Web Developer</h3> -->
+                <a href="https://www.linkedin.com/in/idlaurasalcido/" target="_blank">
+                    <img src="assets/images/linkedin-dreamstale45.png" alt="linkedin" class="social-linkedin-dreamstale45">
+                </a>
+
+                <a href="https://github.com/lauras5" target="_blank">
+                    <img src="assets/images/github2-dreamstale35.png" alt="github" class="social-github2-dreamstale35">
+                </a>
+
+                <a href=" https://stackoverflow.com/users/9036358/lauras5" target="_blank">
+                    <img src="assets/images/overflow-dreamstale53.png" alt="linkedin" class="social-overflow-dreamstale53">
+                </a>
+
+                <a href="https://www.instagram.com/elzeeandtheweb/" target="_blank">
+                    <img src="./assets/images/instagram-dreamstale43.png" alt="linkedin" class="social-overflow-dreamstale53">
+                </a>
+
             </div>
         </div>
     </div>
-
-    <div class="row">
-        <div class="col-md-1"></div>
-        <!-- main content -->
-        <div class="col-md">
-            <h2>About Me</h2>
-            <div id="mainContent">
-                <p>&emsp; My fist experience as a developer had to be when I would edit mine and my friends Myspace pages in
-                    order to have to coolest songs and background. My favorite things about programming are that no matter
-                    how good you are, you can always learn something new, there is no ceiling to how much you can learn.
-                    I also like the problem solving aspect of it. </p>
-            </div>
-        </div>
-        <div class="col-md-1"></div>
-    </div>
-
-    <div class="row">
-        <div class="col-md-1"></div>
-        <div class="col-md">
-            <h2 id='langTitle'>Languages</h2>
-            <div id="languages">
-                <ul>
-                    <li>HTML & CSS</li>
-                    <li>JavaScript</li>
-                    <li>Node.js</li>
-                    <li>Express.js</li>
-                    <li>SQL</li>
-                </ul>
-            </div>
-        </div>
-        
-        <div class="col-md">
-            <h2 id='hobTitle'>Hobbies</h2>
-            <div id="hobbies">
-                <ul>
-                    <li>Coding</li>
-                    <li>Sudoku & KenKen</li>
-                    <li>Painting</li>
-                    <li>Astronomy</li>
-                </ul>
-            </div>
-        </div>
-        <div class="col-md-1"></div>
-    </div>
-    <div class="row">
-        <div class="footer">
-            &copy; Copyright Laura Salcido 2018
-
-            <a href="https://www.linkedin.com/in/idlaurasalcido/" target="_blank">
-                <img src="assets/images/linkedin-dreamstale45.png" alt="linkedin" class="social-linkedin-dreamstale45">
-            </a>
-
-            <a href="https://github.com/lauras5" target="_blank">
-                <img src="assets/images/github2-dreamstale35.png" alt="github" class="social-github2-dreamstale35">
-            </a>
-
-            <a href=" https://stackoverflow.com/users/9036358/lauras5" target="_blank">
-                <img src="assets/images/overflow-dreamstale53.png" alt="linkedin" class="social-overflow-dreamstale53">
-            </a>
-        </div>
-    </div>
-    </div>
-
 </body>
 
 </html>

@@ -32,23 +32,42 @@ body {
     line-height: 70px;
 }
 
+.figInfo {
+    background-color: #c8d0db;
+    border: 5px solid #394b52;
+    position: relative;
+    top: -30px;
+    left: 0px;
+    font-family: 'Oxygen', sans-serif;
+    text-align: justify;
+    padding: 5px;
+}
+
 .jumbotron {
-    background-image: url('../images/headerbg2.jpg');
+    background-image: url('../images/bg.jpeg');
     background-repeat: no-repeat;
     background-size: cover;
+    background-attachment: fixed;
     color: white;
     text-align: center;
     border-radius: 0;
     width: 100%;
 }
 
-h1 {
+#title {
     font-family: 'Unica One', cursive;
-    padding: 5px;
-    font-size: 100px;
-    background-color: #ffffff40;
+    padding: 10px;
+    background-color: #00000070;
     text-shadow: 4px 4px 4px #011423;
     border: 5px solid white;
+    margin:30px;
+}
+
+
+
+li a {
+    text-decoration: none;
+    color:black;
 }
 
 h2 {
@@ -80,7 +99,8 @@ h2 {
 
 .portfolioImages {
     height: 160px;
-    width: 250px;
+    width: 260px;
+    border: 10px solid #394b52;
 }
 
 #languages, #hobbies{
@@ -104,15 +124,24 @@ figure {
     width: 250px;
 }
 
+.gameNames {
+    background-color:rgba(255, 255, 255, 0.671);
+    border: 2px solid white;
+    padding: 15px;
+    font-weight: bold;
+    color:black;
+}
+
 figcaption {
+    background-image: url('../images/bg2.jpeg');
+    background-attachment: fixed;
     position: relative;
     top: -29px;
     left: 34px;
-    background-color: rgba(1, 20, 35, 0.87);
     text-align: center;
     padding: 23px;
     font-family: 'Unica One', cursive;
-    color: white;
+    border: 6px solid white;
 }
 
 #mainContent {
@@ -169,9 +198,10 @@ form {
     margin-bottom: 3px;
     padding: 3px;
     color: white;
+    width: 100%;
 }
 
-.portfolioImages:hover, .social-github2-dreamstale35:hover, .social-linkedin-dreamstale45:hover, .social-overflow-dreamstale53:hover {
+.social-github2-dreamstale35:hover, .social-linkedin-dreamstale45:hover, .social-overflow-dreamstale53:hover {
     opacity: .8;
     animation: shake .5s cubic-bezier(.36,.07,.19,.97) both;
     transform: translate3d(0, 0, 0);
