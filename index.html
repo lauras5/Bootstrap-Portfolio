@@ -1,297 +1,366 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
 <head>
-    <!-- bootstrap stylesheet -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-        crossorigin="anonymous">
-    <!-- my css stylesheet -->
-    <link rel="stylesheet" href="assets/style/style.css">
-    <!-- google fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Oxygen|Vast+Shadow|Unica+One" rel="stylesheet">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Laura Salcido</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Laura Salcido — Portfolio</title>
+  <meta name="description" content="Senior Software Engineer & NeuroAI creator. Portfolio of projects, skills, and links." />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0b0b0d;      /* near-black */
+      --panel:#121217;   /* card */
+      --soft:#1a1b23;    /* hover */
+      --text:#eef2f7;    /* primary text */
+      --muted:#a7b0c0;   /* secondary text */
+      --brand:#ea4cff;   /* pink */
+      --brand2:#5cc8ff;  /* blue */
+      --ring: 0 0 0 3px color-mix(in oklab, var(--brand) 40%, transparent);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+    margin:0;
+    font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+    background:
+        radial-gradient(1200px 600px at 80% -10%, color-mix(in oklab, var(--brand) 18%, transparent), transparent) no-repeat,
+        radial-gradient(1000px 500px at -10% 10%, color-mix(in oklab, var(--brand2) 16%, transparent), transparent) no-repeat,
+        var(--bg);
+    background-attachment: fixed;
+    background-size: cover;
+    color:var(--text);
+    line-height:1.6;
+    }
+
+    a{color:inherit; text-decoration:none}
+    a:focus-visible{outline:none; box-shadow: var(--ring)}
+    .container{max-width:1000px; margin:0 auto; padding:24px}
+
+    /* Header */
+    header{position:sticky; top:0; z-index:20; backdrop-filter:saturate(1.2) blur(6px); background:color-mix(in oklab, var(--bg) 82%, transparent); border-bottom:1px solid #1f2230}
+    .nav{display:flex; align-items:center; justify-content:space-between; gap:20px}
+    .brand{display:flex; align-items:center; gap:12px; font-weight:800; letter-spacing:.4px}
+    .brand .dot{width:10px; height:10px; border-radius:50%; background:linear-gradient(135deg, var(--brand), var(--brand2))}
+    .nav a{padding:10px 12px; border-radius:12px; color:var(--muted)}
+    .nav a:hover{background:var(--soft); color:var(--text)}
+
+    /* Hero */
+    .hero{display:grid; grid-template-columns: 140px 1fr; gap:24px; align-items:center; padding:48px 0}
+    .avatar{width:140px; height:140px; border-radius:50%; object-fit:cover; border:2px solid #23263a}
+    h1{font-size:clamp(28px, 3.8vw, 42px); line-height:1.15; margin:0}
+    .tag{display:inline-block; margin-top:10px; padding:6px 10px; font-size:12px; letter-spacing:.3px; border-radius:999px; color:#0b0b0d; background:linear-gradient(135deg, var(--brand), var(--brand2)); font-weight:700}
+    .links{display:flex; flex-wrap:wrap; gap:10px; margin-top:16px}
+    .btn{display:inline-flex; align-items:center; gap:8px; padding:10px 14px; border-radius:12px; background:var(--panel); border:1px solid #262a3b; color:var(--text)}
+    .btn:hover{background:var(--soft)}
+    .btn svg{width:18px; height:18px}
+
+    /* Sections */
+    section{margin:40px 0}
+    .section-title{font-size:18px; letter-spacing:.2px; color:var(--muted); margin:0 0 14px}
+
+    /* About */
+    .about{background:var(--panel); border:1px solid #1f2333; border-radius:16px; padding:20px}
+
+    /* Skills */
+    .skills{display:grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap:12px}
+    .chip{padding:10px 12px; border-radius:12px; background:var(--panel); border:1px solid #22263a; color:var(--text)}
+
+    /* Projects */
+    .grid{display:grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap:16px}
+    .card{background:var(--panel); border:1px solid #1f2333; border-radius:16px; overflow:hidden; display:flex; flex-direction:column}
+    .card img{width:100%; aspect-ratio: 16/10; object-fit:cover; background:#0c0d12}
+    .card .content{padding:14px}
+    .card h3{margin:0 0 6px; font-size:16px}
+    .card p{margin:0; color:var(--muted); font-size:14px}
+    .card a.card-link{margin:12px; text-align:center; font-weight:600; padding:10px 12px; border-radius:10px; border:1px solid #2a2f46; background:#10131b}
+    .card a.card-link:hover{background:var(--soft)}
+
+    /* Footer */
+    footer{margin:64px 0 24px; color:var(--muted); font-size:14px; display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap}
+
+    /* Small */
+    @media (max-width:720px){
+      .hero{grid-template-columns: 1fr; text-align:center}
+      .links{justify-content:center}
+    }
+
+    /* Expandable cards */
+    .exp-card { display:flex; flex-direction:column; }
+    .exp-details { border-top:1px solid #1f2333; }
+
+    .exp-summary{
+    list-style:none;
+    cursor:pointer;
+    padding:12px 14px;
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    user-select:none;
+    border-top:1px solid #1a1d2b;
+    color:var(--text);
+    }
+    .exp-summary::marker { display:none; }
+    .exp-summary::-webkit-details-marker { display:none; }
+
+    /* caret icon */
+    .exp-summary::before{
+    content:"▶";
+    font-size:12px;
+    transform:translateY(1px);
+    opacity:.8;
+    }
+    .exp-details[open] .exp-summary::before{
+    content:"▼";
+    }
+
+    /* expanded content */
+    .exp-more{ padding:0 14px 14px; color:var(--muted); }
+    .exp-actions{ margin-top:12px; display:flex; gap:10px; flex-wrap:wrap; }
+
+
+
+
+
+  </style>
 </head>
 
 <body>
-
-    <nav id="navbar-example2" class="navbar navbar-light bg-light">
-        <a class="navbar-brand" href="">Laura Salcido</a>
-        <ul class="nav nav-pills">
-            <li class="nav-item">
-                <a class="nav-link" href="#about">About Me</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#portfolio">Portfolio</a>
-            </li>
-<!--             <li class='nav-item'>
-                <a class='nav-link' href="http://elzeeandtheweb.com/" target='_blank'>Blog</a>
-            </li> -->
-        </ul>
-    </nav>
-
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="jumbotron">
-                    <div id='title'>
-                        <h1>LAURA SALCIDO</h1>
-                        <img class="img-responsive img-circle" id="profilePic" src="assets/images/pfp.jpg" alt="profile image">
-                        <h3>Senior Software Engineer</h3>
-                        <a href="https://www.linkedin.com/in/idlaurasalcido/" target="_blank">
-                            <img src="assets/images/linkedin-dreamstale45.png" alt="linkedin" class="social-linkedin-dreamstale45">
-                        </a>
-                        <a href="https://github.com/lauras5" target="_blank">
-                            <img src="assets/images/github2-dreamstale35.png" alt="github" class="social-github2-dreamstale35">
-                        </a>
-<!--                         <a href=" https://stackoverflow.com/users/9036358/lauras5" target="_blank">
-                            <img src="assets/images/overflow-dreamstale53.png" alt="linkedin" class="social-overflow-dreamstale53">
-                        </a>
-
-                        <a href="https://www.instagram.com/elzeeandtheweb/" target="_blank">
-                            <img src="./assets/images/instagram-dreamstale43.png" alt="insta" class="social-overflow-dreamstale53">
-                        </a>
-
-                        <a href="https://twitter.com/NodeJS_is_life" target="_blank">
-                            <img src="./assets/images/twitter-dreamstale71.png" alt="twitter" class="social-overflow-dreamstale53">
-                        </a> -->
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-12">
-                <div data-spy="scroll" data-target="#navbar-example2" data-offset="0">
-                    <h2 id="about">About Me</h2>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div id="mainContent">
-                                <p>
-                                    I collaborate with cross-functional teams to design and implement cutting-edge features for CPDS (Cloud Platform and Data Services) and IBM Integrated Analytic Systems. I leverage my expertise in Python, AI, and web development to optimize code and enhance system performance, resulting in innovative and reliable solutions that drive business success.
-                                </p>
-                                <p>
-                                    My passion for technology stems from my education background, which includes a Bachelor's degree in Computer Science from Colorado State University and a Coding Bootcamp from UC Irvine. There, I gained a solid foundation in fundamental and emerging technologies, such as JavaScript, React, Node.js, MongoDB, and SQL. I also developed a keen eye for system scalability and efficiency, as well as a leadership role in managing projects from inception to completion.
-                                </p>
-                                <p>
-                                    What sets me apart is my commitment to leveraging technology for social good. I am particularly fascinated by the intersection of AI and sustainable development, and I am eager to explore opportunities where I can apply my expertise to drive innovation in this area. I am also dedicated to promoting diversity and inclusion within the industry and inspiring others in STEM, especially as a woman in tech. My hobbies include reading, playing KenKen and spending time with my family!
-                                </p>
-                            </div>
-                        </div>
-
-                        <div class="col-md-6">
-                            <h4 id='langTitle'>Skills</h4>
-                            <div id="languages">
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <ul>
-                                            <li>Python</li>
-                                            <li>Pandas</li>
-                                            <li>Numpy</li>
-                                            <li>JavaScript</li>
-                                            <li>ReactJS</li>
-                                        </ul>
-                                    </div>
-
-                                    <div class="col-md-6">
-                                        <ul>
-                                            <li>SQL</li>
-                                            <li>Docker</li>
-                                            <li>AWS Cloud</li>
-                                            <li>.RustLang</li>
-                                            <li>Bash</li>
-                                        </ul>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-12">
-                <div data-spy="scroll" data-target="#navbar-example2" data-offset="0">
-                    <h2 id="portfolio">Portfolio</h2>
-                    <div class="col-md" id="mainContentPortfolio">
-                        <div id="portfolio">
-                            <div class="row" id='PRows'>
-                                <div class="col-md">
-                                    <figure>
-                                        <a href="https://totsapp.herokuapp.com/" target='_blank'>
-                                            <img src="./assets/images/tots.JPG" alt="toddler app" class="portfolioImages">
-                                        </a>
-                                        <figcaption>
-                                            <span class='gameNames'>Toddler Learning App</span>
-                                        </figcaption>
-                                        <p class='figInfo'>
-                                            This is a MERN stack app that is design for toddlers ages 2-4. It is meant to prepare them for preschool and teach them numbers,
-                                            colors, shapes and abc's. There are games that take in the childs scores and
-                                            the data is sent to the parents page, where the parents can see the childs development
-                                            as well as where they need help.
-                                        </p>
-                                    </figure>
-                                </div>
-                                <div class="col-md">
-                                    <figure>
-                                        <a href="https://lauras5.github.io/CoCodeApp/" target='_blank'>
-                                            <img src="assets/images/cocode.JPG" alt="cocode app" class="portfolioImages">
-                                        </a>
-                                        <figcaption>
-                                            <span class='gameNames'>Co-Code App</span>
-                                        </figcaption>
-                                        <p class='figInfo'>
-                                            This app is for the Remote Developer or CS students. It requires a GitHub login and allows user to search their current location
-                                            for places that offer free WIFI. It also suggests places that have laptop connections
-                                            and food, since you'll probably be there for a while.
-                                        </p>
-                                    </figure>
-                                </div>
-                                <div class="col-md">
-                                    <figure>
-                                        <a href="https://arcane-spire-96905.herokuapp.com/" target='_blank'>
-                                            <img src="assets/images/uni.JPG" alt="UNI Chat" class="portfolioImages">
-                                        </a>
-                                        <figcaption>
-                                            <span class='gameNames'>UNI Chat</span>
-                                        </figcaption>
-                                        <p class='figInfo'>
-                                            UNI Chat is a web app that allows students to communicate anonymously with other students. RAs are also able to clearly communicate
-                                            with all students in their dorms via a message board on their profiles, and Admins
-                                            also have a message board. Create a profile with the Auth Code >>>
-                                            <strong>al748o9bg5l97473mkckh6ng</strong>
-                                        </p>
-                                    </figure>
-                                </div>
-                            </div>
-                            <hr>
-                            <div class="row">
-                                <div class="col-md">
-                                    <figure>
-                                        <a href="https://pure-atoll-91754.herokuapp.com/" target='_blank'>
-                                            <img src="./assets/images/clicky.JPG" alt="clicky game" class="portfolioImages">
-                                        </a>
-                                        <figcaption>
-                                            <span class='gameNames'>Clicky Game</span>
-                                        </figcaption>
-                                    </figure>
-                                </div>
-                                <div class="col-md">
-                                    <figure>
-                                        <a href="https://lauras5.github.io/Get-a-Gif/" target='_blank'>
-                                            <img src="./assets/images/gifapp.jpg" alt="gif app" class="portfolioImages">
-                                        </a>
-                                        <figcaption>
-                                            <span class='gameNames'>Get-a-Gif</span>
-                                        </figcaption>
-                                    </figure>
-                                </div>
-                                <div class="col-md">
-                                    <figure>
-                                        <a href="https://lauras5.github.io/Gem-Game/" target='_blank'>
-                                            <img src="assets/images/gemgame.jpg" alt="gem game" class="portfolioImages">
-                                        </a>
-                                        <figcaption>
-                                            <span class='gameNames'>Gem Game</span>
-                                        </figcaption>
-                                    </figure>
-                                </div>
-                                <div class="col-md">
-                                    <figure>
-                                        <a href="https://lauras5.github.io/week-4-game/" target='_blank'>
-                                            <img src="assets/images/rpggame.JPG" alt="rpg game" class="portfolioImages">
-                                        </a>
-                                        <figcaption>
-                                            <span class='gameNames'>RPG Game</span>
-                                        </figcaption>
-                                    </figure>
-                                </div>
-                                <div class="col-md">
-                                    <figure>
-                                        <a href="https://lauras5.github.io/TriviaGame/" target='_blank'>
-                                            <img src="assets/images/trivia.JPG" alt="trivia" class="portfolioImages">
-                                        </a>
-                                        <figcaption>
-                                            <span class='gameNames'>Anime Trivia Game</span>
-                                        </figcaption>
-                                    </figure>
-                                </div>
-                                <div class="col-md">
-                                    <figure>
-                                        <a href="https://lauras5.github.io/Firebase-Train/" target='_blank'>
-                                            <img src="assets/images/firebasetrains.JPG" alt="train app" class="portfolioImages">
-                                        </a>
-                                        <figcaption>
-                                            <span class='gameNames'>Train Tracker</span>
-                                        </figcaption>
-                                    </figure>
-                                </div>
-                                <div class="col-md">
-                                    <figure>
-                                        <a href="https://lauras5.github.io/Hangman-Game/" target='_blank'>
-                                            <img src="assets/images/hangman.jpg" alt="hangman game" class="portfolioImages">
-                                        </a>
-                                        <figcaption>
-                                            <span class='gameNames'>90's Hangman</span>
-                                        </figcaption>
-                                    </figure>
-                                </div>
-
-                                <div class="col-md">
-                                    <figure>
-                                        <a href="https://lauras5.github.io/Psychic-Game/" target='_blank'>
-                                            <img src="assets/images/psychic.JPG" alt="psychic game" class="portfolioImages">
-                                        </a>
-                                        <figcaption>
-                                            <span class='gameNames'>Psychic Game</span>
-                                        </figcaption>
-                                    </figure>
-                                </div>
-                                <div class="col-md">
-                                    <figure>
-                                        <a href="https://obscure-plains-99326.herokuapp.com/" target='_blank'>
-                                            <img src="assets/images/burger.JPG" alt="burgerGame" class="portfolioImages">
-                                        </a>
-                                        <figcaption>
-                                            <span class='gameNames'>Yum Yum Burger</span>
-                                        </figcaption>
-                                    </figure>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="footer">
-                &copy; Copyright Laura Salcido 2024
-
-                <a href="https://www.linkedin.com/in/idlaurasalcido/" target="_blank">
-                    <img src="assets/images/linkedin-dreamstale45.png" alt="linkedin" class="social-linkedin-dreamstale45">
-                </a>
-
-                <a href="https://github.com/lauras5" target="_blank">
-                    <img src="assets/images/github2-dreamstale35.png" alt="github" class="social-github2-dreamstale35">
-                </a>
-<!--                 <a href=" https://stackoverflow.com/users/9036358/lauras5" target="_blank">
-                    <img src="assets/images/overflow-dreamstale53.png" alt="linkedin" class="social-overflow-dreamstale53">
-                </a>
-
-                <a href="https://www.instagram.com/elzeeandtheweb/" target="_blank">
-                    <img src="./assets/images/instagram-dreamstale43.png" alt="linkedin" class="social-overflow-dreamstale53">
-                </a>
-
-                <a href="https://twitter.com/NodeJS_is_life" target="_blank">
-                    <img src="./assets/images/twitter-dreamstale71.png" alt="twitter" class="social-overflow-dreamstale53">
-                </a> -->
-            </div>
-        </div>
+  <header>
+    <div class="container nav">
+      <div class="brand"><span class="dot" aria-hidden="true"></span> Laura Salcido</div>
+      <nav aria-label="Main">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#ml-projects">ML/AI</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
     </div>
-</body>
+  </header>
 
+  <main class="container">
+    <!-- hero -->
+    <section class="hero" aria-labelledby="intro">
+      <img src="assets/images/pfp.png" alt="Portrait of Laura Salcido" class="avatar" loading="eager" />
+      <div>
+        <h1 id="intro">Senior Software Engineer <span class="tag">NeuroAI · ML · Backend</span></h1>
+        <p class="muted">I build reliable, data‑driven systems and human‑centered AI. Recently: vector DB + LLM features for SASVA, imaging/health projects, and clean backend services on AWS.</p>
+        <div class="links">
+          <a class="btn" href="https://www.linkedin.com/in/devlaura/" target="_blank" rel="noopener">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM.5 8h4V24h-4V8zM8.5 8h3.8v2.2h.05c.53-1 1.83-2.2 3.77-2.2 4.03 0 4.78 2.65 4.78 6.1V24h-4v-7.1c0-1.69-.03-3.86-2.35-3.86-2.36 0-2.72 1.84-2.72 3.74V24h-4V8z"/></svg>
+            LinkedIn
+          </a>
+          <a class="btn" href="https://github.com/lauras5" target="_blank" rel="noopener">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5a12 12 0 00-3.79 23.4c.6.11.82-.26.82-.58v-2.02c-3.34.73-4.04-1.61-4.04-1.61-.55-1.4-1.35-1.77-1.35-1.77-1.1-.76.08-.74.08-.74 1.22.09 1.86 1.25 1.86 1.25 1.08 1.84 2.82 1.31 3.51 1 .11-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.9 0-1.3.47-2.36 1.24-3.19-.12-.3-.54-1.52.12-3.17 0 0 1.01-.32 3.3 1.22a11.4 11.4 0 016 0c2.29-1.54 3.29-1.22 3.29-1.22.66 1.65.24 2.87.12 3.17.77.83 1.23 1.9 1.23 3.19 0 4.58-2.8 5.6-5.48 5.9.43.36.81 1.07.81 2.16v3.2c0 .32.21.7.82.58A12 12 0 0012 .5z"/></svg>
+            GitHub
+          </a>
+          <a class="btn" href="https://www.credly.com/users/laurasalcido" target="_blank" rel="noopener">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M12 2a10 10 0 1 0 10 10A10.011 10.011 0 0 0 12 2zm-1 15-5-5 1.41-1.41L11 14.17l5.59-5.58L18 10z"/>
+            </svg>
+            Certifications
+            </a>
+          <a class="btn" href="#contact">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 12.713l11.985-7.2A1 1 0 0023 4H1a1 1 0 00-.985 1.513L12 12.713z"/><path d="M12.017 14.186L.015 6.986A.996.996 0 000 7v12a2 2 0 002 2h20a2 2 0 002-2V7a.996.996 0 00-.015-.014l-12 7.2a1 1 0 01-.968 0z"/></svg>
+            Contact
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" aria-labelledby="about-title">
+      <h2 class="section-title" id="about-title">About</h2>
+      <div class="about">
+        <p>I collaborate across product, data, and design to ship dependable software. My toolkit spans Python, JS/TS, React, Node, SQL, Docker, and AWS. I care about clarity, performance, and shipping features that actually help people. Lately I’m focusing on healthcare + NeuroAI projects.</p>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" aria-labelledby="skills-title">
+      <h2 class="section-title" id="skills-title">Skills</h2>
+      <div class="skills" role="list">
+        <div class="chip" role="listitem">Python · Pandas · NumPy</div>
+        <div class="chip" role="listitem">SQL · Postgres · MongoDB</div>
+        <div class="chip" role="listitem">Docker · CI/CD</div>
+        <div class="chip" role="listitem">AWS (S3, EC2, Lambda)</div>
+        <div class="chip" role="listitem">AI/ML · LLMs · Vector DBs</div>
+        <div class="chip" role="listitem">JavaScript · React</div>
+        <div class="chip" role="listitem">Node.js · Express</div>
+        <div class="chip" role="listitem">Bash · Linux</div>
+      </div>
+    </section>
+
+    <!-- ML/AI (Expandable Cards) -->
+    <section id="ml-projects" aria-labelledby="ml-projects-title">
+    <h2 class="section-title" id="ml-projects-title">ML/AI</h2>
+    <div class="grid">
+
+    <!-- Card 1: NeuroWitchAI Teaching -->
+    <article class="card exp-card">
+      <img src="assets/images/neurowitchai.png" alt="NeuroWitchAI teaching thumbnails" loading="lazy" />
+      <div class="content">
+        <h3>NeuroWitchAI — Teaching</h3>
+        <p>Accessible ML/NeuroAI explainers, TikTok/YouTube series, and hands-on demos.</p>
+      </div>
+      <details class="exp-details">
+        <summary class="exp-summary">More</summary>
+        <div class="exp-more">
+          <p>I design bite-size curricula, live code walkthroughs, and visual explainers (activation functions, attention, EEG features). The goal is clarity without losing rigor.</p>
+          <div class="exp-actions">
+            <a class="btn" href="https://github.com/neurowitchai" target="_blank" rel="noopener">View GitHub</a>
+            <a class="btn" href="https://www.youtube.com/@neurowitchai/shorts" target="_blank" rel="noopener">View YouTube</a>
+          </div>
+        </div>
+      </details>
+    </article>
+
+    <!-- Card 2: NeuroAI Application -->
+    <article class="card exp-card">
+      <img src="assets/images/neuroai.png" alt="NeuroAI application preview" loading="lazy" />
+      <div class="content">
+        <h3>NeuroAI Application</h3>
+        <p>EEG → features → real-time insights for state detection and biofeedback.</p>
+      </div>
+      <details class="exp-details">
+        <summary class="exp-summary">More</summary>
+        <div class="exp-more">
+          <p>Stream Muse2 signals, compute band-power (δ/θ/α/β/γ), and surface uncertainty-aware inferences. Built with Python, PyTorch, and a lightweight web UI.</p>
+          <div class="exp-actions">
+            <a class="btn" href="https://github.com/neurowitchai/neuroai-portfolio/blob/main/notebooks/brainwave_muse2/brainwave_muse2_project.ipynb" target="_blank" rel="noopener">Open Notebook</a>
+          </div>
+        </div>
+      </details>
+    </article>
+
+    <!-- Card 3: Chest X-ray Classification -->
+    <article class="card exp-card">
+      <img src="assets/images/xray.png" alt="Chest X-ray classification preview" loading="lazy" />
+      <div class="content">
+        <h3>Chest X-ray Classification</h3>
+        <p>NIH ChestX-ray14 multi-label classifier with clean data pipeline & evals.</p>
+      </div>
+      <details class="exp-details">
+        <summary class="exp-summary">More</summary>
+        <div class="exp-more">
+          <p>Custom PyTorch dataset, 224×224 preprocessing, threshold-tuned sigmoid outputs, AUROC per label, and error analysis. Roadmap: Grad-CAM + uncertainty.</p>
+          <div class="exp-actions">
+            <a class="btn" href="#" target="_blank" rel="noopener">Open notebook</a>
+          </div>
+        </div>
+      </details>
+    </article>
+
+  </div>
+</section>
+
+
+    <!-- Projects -->
+    <section id="projects" aria-labelledby="projects-title">
+      <h2 class="section-title" id="projects-title">Projects</h2>
+      <div class="grid">
+        <!-- Toddler App -->
+        <article class="card">
+          <img src="assets/images/tots.JPG" alt="Screenshot of Toddler Learning App" loading="lazy" />
+          <div class="content">
+            <h3>Toddler Learning App (MERN)</h3>
+            <p>Mini‑games for 2–4 year olds. Tracks scores per child and surfaces insights for parents.</p>
+          </div>
+          <a class="card-link" href="https://github.com/lauras5/TOTS-learning-app" target="_blank" rel="noopener">GitHub Repo</a>
+        </article>
+
+        <!-- Co-Code App -->
+        <article class="card">
+          <img src="assets/images/cocode.JPG" alt="Screenshot of Co‑Code App" loading="lazy" />
+          <div class="content">
+            <h3>Co‑Code (GitHub + Places)</h3>
+            <p>Find work spots with Wi‑Fi / power near you. GitHub login, location search, suggestions.</p>
+          </div>
+          <a class="card-link" href="https://lauras5.github.io/CoCodeApp/" target="_blank" rel="noopener">Website</a>
+        </article>
+
+        <!-- UNI Chat -->
+        <article class="card">
+          <img src="assets/images/uni.JPG" alt="Screenshot of UNI Chat app" loading="lazy" />
+          <div class="content">
+            <h3>UNI Chat</h3>
+            <p>Anonymous student chat with RA + Admin broadcast boards. Includes invite/auth code flow.</p>
+          </div>
+          <a class="card-link" href="https://github.com/lauras5/UNIChat" target="_blank" rel="noopener">GitHub Repo</a>
+        </article>
+
+        <!-- Misc small projects (keep a couple) -->
+        <article class="card">
+          <img src="assets/images/gifapp.jpg" alt="Get‑a‑Gif screenshot" loading="lazy" />
+          <div class="content">
+            <h3>Get‑a‑Gif</h3>
+            <p>Quick search UI for trending and themed GIFs via API.</p>
+          </div>
+          <a class="card-link" href="https://lauras5.github.io/Get-a-Gif/" target="_blank" rel="noopener">Website</a>
+        </article>
+
+        <article class="card">
+          <img src="assets/images/gemgame.jpg" alt="Gem Game screenshot" loading="lazy" />
+          <div class="content">
+            <h3>Gem Game</h3>
+            <p>Casual number‑matching web game. Built for practice + fun.</p>
+          </div>
+          <a class="card-link" href="https://lauras5.github.io/Gem-Game/" target="_blank" rel="noopener">Website</a>
+        </article>
+
+        <article class="card">
+          <img src="assets/images/rpggame.JPG" alt="RPG Game screenshot" loading="lazy" />
+          <div class="content">
+            <h3>RPG Game</h3>
+            <p>Classic RPG mechanics in a lightweight browser experience.</p>
+          </div>
+          <a class="card-link" href="https://lauras5.github.io/week-4-game/" target="_blank" rel="noopener">Website</a>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" aria-labelledby="contact-title">
+      <h2 class="section-title" id="contact-title">Contact</h2>
+      <div class="about">
+        <p>Interested in collaborating or hiring? Reach out on <a href="https://www.linkedin.com/in/devlaura/" target="_blank" rel="noopener">LinkedIn</a>.</p>
+      </div>
+    </section>
+
+    <footer>
+      <span>© <span id="year"></span> Laura Salcido</span>
+      <!-- <span>Made with clean HTML/CSS · No framework</span> -->
+    </footer>
+  </main>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+    // year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // flip logic
+    document.querySelectorAll('.flip-inner').forEach(card => {
+        const btn = card.querySelector('.flip-toggle');
+        const set = on => {
+        card.classList.toggle('is-flipped', on);
+        if (btn) btn.setAttribute('aria-pressed', String(on));
+        };
+        const toggle = () => set(!card.classList.contains('is-flipped'));
+
+        if (btn) btn.addEventListener('click', e => { e.stopPropagation(); toggle(); });
+        card.addEventListener('keydown', e => {
+        if (e.code === 'Space' || e.code === 'Enter') { e.preventDefault(); toggle(); }
+        });
+        // Optional: click anywhere to flip (except links/buttons)
+        card.addEventListener('click', e => {
+        if (e.target.closest('a,button')) return;
+        toggle();
+        });
+    });
+    });
+</script>
+
+</body>
 </html>
